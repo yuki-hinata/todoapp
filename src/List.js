@@ -1,12 +1,12 @@
 import React from "react";
 import Item from "./Item";
 
-const List = () => {
+const List = ({ todos, deleteTodo }) => {
   return (
     <ul>
-      <Item />
-      <Item />
-      <Item />
+      {todos.map((todo) => {
+        return <Item content={todo.content} id={todo.id} key={todo.id} deleteTodo={deleteTodo}/>;
+      })}
     </ul>
   );
 };
